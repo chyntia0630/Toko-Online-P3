@@ -13,12 +13,12 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f1f5f9;
+            background: #f9f4f4;
             color: #1e293b;
         }
 
         header {
-            background: #2563eb;
+            background: #5a0c0c;
             color: white;
             padding: 20px 7%;
             display: flex;
@@ -33,7 +33,7 @@
 
         .logout-button {
             background: white;
-            color: #2563eb;
+            color: #701010;
             border: none;
             padding: 10px 16px;
             border-radius: 8px;
@@ -55,14 +55,14 @@
         }
 
         .welcome h1 {
-            color: #2563eb;
+            color: #720e0e;
             margin-top: 0;
         }
 
         .info {
             margin-top: 25px;
             padding: 20px;
-            background: #dbeafe;
+            background: #fd979783;
             border-radius: 10px;
         }
     </style>

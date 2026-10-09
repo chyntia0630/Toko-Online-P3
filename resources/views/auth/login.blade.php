@@ -32,7 +32,7 @@
 
         h1 {
             text-align: center;
-            color: #2563eb;
+            color: #7a1508;
             margin-top: 0;
         }
 
@@ -57,15 +57,15 @@
         }
 
         input:focus {
-            outline: 2px solid #93c5fd;
-            border-color: #2563eb;
+            outline: 2px solid #bf4545;
+            border-color: #9a1919;
         }
 
         button {
             width: 100%;
             margin-top: 22px;
             padding: 12px;
-            background: #2563eb;
+            background: #832020;
             color: white;
             border: none;
             border-radius: 8px;
@@ -74,7 +74,7 @@
         }
 
         button:hover {
-            background: #1d4ed8;
+            background: #e94c4c;
         }
 
         .footer {

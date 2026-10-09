@@ -32,7 +32,7 @@
 
         h1 {
             text-align: center;
-            color: #2563eb;
+            color: #710e0e;
             margin-top: 0;
         }
 
@@ -65,7 +65,7 @@
             width: 100%;
             margin-top: 22px;
             padding: 12px;
-            background: #2563eb;
+            background: #570b0b;
             color: white;
             border: none;
             border-radius: 8px;
