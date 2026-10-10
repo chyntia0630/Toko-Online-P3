@@ -36,6 +36,7 @@
             display: flex;
             gap: 18px;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -46,6 +47,13 @@
 
         nav a:hover {
             color: #fecaca;
+        }
+
+        nav button {
+            padding: 9px 14px;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
         }
 
         .container {
@@ -61,6 +69,7 @@
         .intro h1 {
             color: #7f1d1d;
             margin-bottom: 8px;
+            font-size: 32px;
         }
 
         .intro p {
@@ -88,13 +97,15 @@
         }
 
         .product-image {
-            height: 190px;
+            height: 100px;
+            background: #f5e7e7;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #f5e7e7;
             color: #7f1d1d;
-            font-size: 48px;
+            font-size: 14px;
+            letter-spacing: 3px;
+            font-weight: bold;
         }
 
         .product-info {
@@ -104,6 +115,16 @@
         .product-info h3 {
             margin: 0 0 10px;
             font-size: 18px;
+        }
+
+        .category {
+            display: inline-block;
+            background: #f5e7e7;
+            color: #7f1d1d;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin: 0 0 10px;
         }
 
         .description {
@@ -135,6 +156,7 @@
             padding: 11px;
             border-radius: 8px;
             font-weight: bold;
+            transition: background 0.2s;
         }
 
         .detail-button:hover {
@@ -168,18 +190,18 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <h2>Toko Online</h2>
 
         <nav>
             <a href="{{ route('dashboard') }}">Dashboard</a>
+            <a href="{{ route('orders.index') }}">Riwayat Pesanan</a>
 
             <form action="{{ route('logout') }}" method="POST">
                 @csrf
-                <button type="submit" style="padding: 9px 14px; border: none; border-radius: 7px; cursor: pointer;">
-                    Logout
-                </button>
+                <button type="submit">Logout</button>
             </form>
         </nav>
     </header>
@@ -187,7 +209,7 @@
     <main class="container">
         <section class="intro">
             <h1>Katalog Produk</h1>
-            <p>Temukan produk pilihan yang sesuai dengan kebutuhanmu.</p>
+            <p>Temukan pilihan fashion wanita yang sesuai dengan gayamu.</p>
         </section>
 
         @if ($products->isEmpty())
@@ -199,22 +221,20 @@
                 @foreach ($products as $product)
                     <article class="product-card">
                         <div class="product-image">
-                            @if ($product->image)
-                                <img
-                                    src="{{ asset('storage/' . $product->image) }}"
-                                    alt="{{ $product->name }}"
-                                    style="width: 100%; height: 100%; object-fit: cover;"
-                                >
-                            @else
-                                🛍️
-                            @endif
+                            FASHION
                         </div>
 
                         <div class="product-info">
                             <h3>{{ $product->name }}</h3>
 
+                            @if ($product->category)
+                                <p class="category">
+                                    {{ $product->category }}
+                                </p>
+                            @endif
+
                             <p class="description">
-                                {{ $product->description ?? 'Produk pilihan untukmu.' }}
+                                {{ $product->description ?? 'Produk pilihan untuk melengkapi gayamu.' }}
                             </p>
 
                             <p class="price">
@@ -225,9 +245,9 @@
                                 Stok tersedia: {{ $product->stock }}
                             </p>
 
-                            <a 
-                            href="{{ route('products.show', $product->id) }}" 
-                            class="detail-button"
+                            <a
+                                href="{{ route('products.show', $product->id) }}"
+                                class="detail-button"
                             >
                                 Lihat Produk
                             </a>
@@ -239,3 +259,4 @@
     </main>
 </body>
 </html>
+```

@@ -330,6 +330,11 @@
                     <a href="{{ route('products.index') }}" class="button">
                         Tambah Produk
                     </a>
+                
+                    <a href="{{ route('checkout.index') }}" class="button">
+                        Checkout
+                    </a>
+
 
                     <form action="{{ route('cart.clear') }}" method="POST">
                         @csrf
